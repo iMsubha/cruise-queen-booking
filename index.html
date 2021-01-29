@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cruise Booking</title>
     <!-- Fonts -->
-   <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -35,43 +38,45 @@
         </div>
 
 
-        <div class="booking-form">
+        <div class="booking-form p-3">
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+                <input class="input-style" type="text" name="" placeholder="Dhaka, Bangladesh">
             </div>
             <div class="input-group">
                 <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                <input class="input-style" type="text" name="" placeholder="New York, United States">
             </div>
-            <div class="inputs">
+            <div class="inputs d-flex">
                 <div class="input-group">
-                    <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                    <label for="">Departure</label>
+                    <input class="input-style" type="date" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
+                    <input class="input-style" type="date" name="">
                 </div>
             </div>
-            <div class="input-group f-class">
+            <div class="input-group first-class d-flex flex-row justify-content-start">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input class="input-style input-width" type="number" name="">
                 </div>
-                <div class="plus-minus-btn">
-                    <p>+ -</p>
+                <div class="plus-minus-btn d-flex flex-column mt-4 pt-2">
+                    <button class="btn btn-default btn-sm"><i class="fa fa-plus"></i></button>
+                    <button class="btn btn-default btn-sm"><i class="fa fa-minus"></i></button>
                 </div>
             </div>
             
-            <div class="input-group f-class">
+            <div class="input-group first-class d-flex flex-row justify-content-start">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input class="input-style input-width" type="number" name="">
                 </div>
-                <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
+                <div class="plus-minus-btn d-flex flex-column  mt-4 pt-2">
+                    <button class="btn btn-default btn-sm"><i class="fa fa-plus"></i></button>
+                    <button class="btn btn-default btn-sm"><i class="fa fa-minus"></i></button>
                 </div>
             </div>
             <div class="calculations">
