@@ -2,116 +2,194 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cruise Booking</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cruise Booking</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 
 <body>
-    <!--Header and Menu Section-->
-    <header class="container">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a class="active" href="#">Sign Up</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!--Header and Menu Section-->
+  <header class="container">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a class="active" href="#">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!--Booking Section-->
-    <main class="main-content container">
+  <!--Booking Section-->
+  <main class="main-content container">
+    <div class="booking-content">
+      <h1>Cruise Queen</h1>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book./p>
+      </p>
+    </div>
 
-        <div class="booking-content">
-            <h1>Cruise Queen</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book./p>
+    <div class="booking-form p-3">
+      <h3>Book Ocean Time</h3>
+      <div class="input-group">
+        <label for="">Starting Point</label>
+        <input id="starting-point" class="input-style" type="text" name="" placeholder="Dhaka, Bangladesh" />
+      </div>
+      <div class="input-group">
+        <label for="">Ending Point</label>
+        <input id="ending-point"class="input-style" type="text" name="" placeholder="New York, United States" />
+      </div>
+      <div class="inputs d-flex">
+        <div class="input-group">
+          <label for="">Departure</label>
+          <input id="departure-date" class="input-style" type="date" name="" />
+        </div>
+        <div class="input-group">
+          <label for="">Return</label>
+          <input id="return-date" class="input-style" type="date" name="" />
+        </div>
+      </div>
+      <div class="first-class d-flex flex-row justify-content-start">
+        <div>
+          <label for="">First Class ($150)</label>
+          <input id="firstClass-count" class="input-style input-width" type="number" name="" value="0" min="0" />
+        </div>
+        <div class="plus-minus-btn d-flex flex-row mt-4 pt-2 pl-2">
+          <button onclick="handleTicketChanges('firstClass', true)" class="btn btn-sm mr-1">
+            <i class="fa fa-plus"></i>
+          </button>
+          <button onclick="handleTicketChanges('firstClass',false)" class="btn btn-sm">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="first-class d-flex flex-row justify-content-start">
+        <div>
+          <label for="">Economy ($100)</label>
+          <input id="economyClass-count" class="input-style input-width" type="number" name="" value="0" min="0" />
+        </div>
+        <div class="plus-minus-btn d-flex flex-row mt-4 pt-2 pl-2">
+          <button onclick="handleTicketChanges('economyClass',true)" class="btn btn-sm mr-1">
+            <i class="fa fa-plus"></i>
+          </button>
+          <button onclick="handleTicketChanges('economyClass',false)" class="btn btn-sm">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="calculations">
+        <div class="amount">
+          <div class="left">
+            <p>Subtotal</p>
+          </div>
+          <div class="right">
+            <p id="total-cost">$0</p>
+          </div>
         </div>
 
-
-        <div class="booking-form p-3">
-            <h3>Book Ocean Time</h3>
-            <div class="input-group">
-                <label for="">Flying From</label>
-                <input class="input-style" type="text" name="" placeholder="Dhaka, Bangladesh">
-            </div>
-            <div class="input-group">
-                <label for="">Flying To</label>
-                <input class="input-style" type="text" name="" placeholder="New York, United States">
-            </div>
-            <div class="inputs d-flex">
-                <div class="input-group">
-                    <label for="">Departure</label>
-                    <input class="input-style" type="date" name="">
-                </div>
-                <div class="input-group">
-                    <label for="">Return</label>
-                    <input class="input-style" type="date" name="">
-                </div>
-            </div>
-            <div class="input-group first-class d-flex flex-row justify-content-start">
-                <div>
-                    <label for="">First Class ($150)</label>
-                    <input id='firstClass-count' class="input-style input-width" type="number" name="" value="0">
-                </div>
-                <div class="plus-minus-btn d-flex flex-row mt-4 pt-2 pl-2">
-                    <button onclick="handleTicketChanges('firstClass', true)" class="btn btn-default btn-sm"><i class="fa fa-plus"></i></button>
-                    <button onclick="handleTicketChanges('firstClass',false)" class="btn btn-default btn-sm"><i class="fa fa-minus"></i></button>
-                </div>
-            </div>
-            
-            <div class="input-group first-class d-flex flex-row justify-content-start">
-                <div>
-                    <label for="">Economy ($100)</label>
-                    <input id="economyClass-count" class="input-style input-width" type="number" name="" value="0">
-                </div>
-                <div class="plus-minus-btn d-flex flex-row mt-4 pt-2 pl-2">
-                    <button onclick="handleTicketChanges('economyClass',true)" class="btn btn-default btn-sm"><i class="fa fa-plus"></i></button>
-                    <button  onclick="handleTicketChanges('economyClass',false)" class="btn btn-default btn-sm"><i class="fa fa-minus"></i></button>
-                </div>
-            </div>
-            <div class="calculations">
-                <div class="amount">
-                    <div class="left">
-                        <p>Subtotal</p>
-                    </div>
-                    <div class="right">
-                        <p id="total-cost">$0</p>
-                    </div>
-                </div>
-
-                <div class="amount">
-                    <div class="left">
-                        <p>Charge 10% VAT</p>
-                    </div>
-                    <div class="right">
-                        <p id="total-vat">$0</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="amount">
-                    <div class="left">
-                        <h4>Total</h4>
-                    </div>
-                    <div class="right">
-                        <p id="final-cost">$0</p>
-                    </div>
-                </div>
-            </div>
-            <button class="btn-style">Book Now</button>
+        <div class="amount">
+          <div class="left">
+            <p>Charge 10% VAT</p>
+          </div>
+          <div class="right">
+            <p id="total-vat">$0</p>
+          </div>
         </div>
-    </main>
-    <script src="./scripts.js"></script>
-    <!--Thank You-->
+        <hr />
+        <div class="amount">
+          <div class="left">
+            <h4>Total</h4>
+          </div>
+          <div class="right">
+            <p id="final-cost">$0</p>
+          </div>
+        </div>
+      </div>
+      <button onClick="handleBooking()" type="button" class="btn-style" data-toggle="modal" data-target="#exampleModal">Book Now</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Ocean Time Cruise Details</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-row align-items-center mb-2">
+              <h5>Starting Point :</h5>
+              <h5 id="starting-point-modal" class="pl-3"></h5>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+              <h5>Ending Point :</h5>
+              <h5 id="ending-point-modal" class="pl-3"></h5>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+              <h5>Departure Date :</h5>
+              <h5 id="departure-date-modal" class="pl-3"></h5>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+              <h5>Return Date:</h5>
+              <h5 id="return-date-modal" class="pl-3"></h5>
+            </div>
+            <div class="amount">
+                <h5>Subtotal:</h5>
+              <div class="">
+                <p id="total-cost-modal">$0</p>
+              </div>
+            </div>
+            <div class="amount">
+                <h5>Charge 10% VAT:</h5>
+              <div class="">
+                <p id="total-vat-modal">$0</p>
+              </div>
+            </div>
+            <div class="amount">
+                <h5>Total:</h5>
+              <div class="">
+                <p id="final-cost-modal">$0</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script src="./scripts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!--Thank You-->
 </body>
 
 </html>

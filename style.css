@@ -5,6 +5,11 @@
     text-decoration: none;
     list-style-type: none;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 body{
     font-family: 'Roboto', sans-serif;
     background:url("images/ship.png");
@@ -68,8 +73,13 @@ nav ul li a:hover, a.active{
 .booking-form h3{
     margin: 10px 0px;
 }
+div > label,p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
 .booking-form  .input-group{
     margin: 10px 0;
+    font-weight: 600;
 }
 .booking-form  .calculations{
     margin: 10px 0;

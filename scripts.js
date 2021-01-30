@@ -21,8 +21,25 @@ function calculateTotalCost(){
 
     
     setInnerText('total-cost',subTotalCost);
+    setInnerText('total-cost-modal',subTotalCost);
     setInnerText('total-vat',totalVat);
+    setInnerText('total-vat-modal',totalVat);
     setInnerText('final-cost',finalCost);
+    setInnerText('final-cost-modal',finalCost);
+}
+function handleBooking(){
+    const startingPoint = document.getElementById('starting-point').placeholder;
+    const endingPoint = document.getElementById('ending-point').placeholder;
+    const departureDate = document.getElementById('departure-date').value;
+    const returnDate = document.getElementById('return-date').value;
+    setInnerString('starting-point-modal',startingPoint);
+    setInnerString('ending-point-modal',endingPoint);
+    setInnerString('departure-date-modal',departureDate);
+    setInnerString('return-date-modal',returnDate);
+    calculateTotalCost();
+}
+function setInnerString(id, point){
+    document.getElementById(id).innerText = point;
 }
 function setInnerText(id, totalCost){
     document.getElementById(id).innerText = "$"+ totalCost;
